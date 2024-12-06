@@ -21,7 +21,7 @@ def initial_position_guard(grid):
     for y, row in enumerate(grid):
         for x, cell in enumerate(row):
             if cell == '^':
-                print('Initial position:', (x, y))
+                print('Initial Guard position:', (x, y))
                 return (x, y)
     return None
 
@@ -90,10 +90,22 @@ def grid_game_status(grid):
                    
         #print_grid(grid, position, direction)
         #print()
-        print(f"The guard visited", len(visited) + 1, "locations")
+    print(f"The guard visited", len(visited), "locations")
+
+def initial_obstacles(grid):
+    obstacles = []
+    for y, row in enumerate(grid):
+        for x, cell in enumerate(row):
+            if cell == '#':
+                obstacles.append((x, y))
+    return obstacles
 
 
 if __name__ == "__main__":
     file_path = os.path.join(os.path.dirname(__file__), 'day6_full_1.txt')
     grid = read_input()
     grid_game_status(grid)
+
+    # Example usage
+    #obstacles = initial_obstacles(grid)
+    #print("Initial obstacles:", obstacles)
