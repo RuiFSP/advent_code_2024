@@ -125,20 +125,12 @@ def solve(data, part2):
     return calculate_result(final_positions)
 
 if __name__ == "__main__":
-    file_path = os.path.join(os.path.dirname(__file__), 'day9_simple.txt')
-    data = read_input(file_path)
+    for file_name in ['day9_simple.txt', 'day9_full.txt']:
+        file_path = os.path.join(os.path.dirname(__file__), file_name)
+        data = read_input(file_path)
 
-    part1_result = solve(data, False)
-    part2_result = solve(data, True)
+        part1_result = solve(data, False)
+        part2_result = solve(data, True)
 
-    print(f'Part 1 simple: {part1_result}')
-    print(f'Part 2 simple: {part2_result}')
-    
-    file_path = os.path.join(os.path.dirname(__file__), 'day9_full.txt')
-    data = read_input(file_path)
-
-    part1_result = solve(data, False)
-    part2_result = solve(data, True)
-
-    print(f'Part 1 full: {part1_result}')
-    print(f'Part 2 full: {part2_result}')
+        print(f'Part 1 {file_name.split("_")[1]}: {part1_result}')
+        print(f'Part 2 {file_name.split("_")[1]}: {part2_result}')
