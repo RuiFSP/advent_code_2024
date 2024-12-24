@@ -1,0 +1,15 @@
+// Circuit Visualization
+digraph {
+	x00 [label="x00: 1" shape=circle]
+	x01 [label="x01: 1" shape=circle]
+	x02 [label="x02: 1" shape=circle]
+	y00 [label="y00: 0" shape=circle]
+	y01 [label="y01: 1" shape=circle]
+	y02 [label="y02: 0" shape=circle]
+	x00 -> z00 [label="AND (x00)"]
+	y00 -> z00 [label="AND (y00)"]
+	x01 -> z01 [label="XOR (x01)"]
+	y01 -> z01 [label="XOR (y01)"]
+	x02 -> z02 [label="OR (x02)"]
+	y02 -> z02 [label="OR (y02)"]
+}
